@@ -1,0 +1,35 @@
+<%= form_with(model: kitten, local: true) do |f| %>
+    <% if kitten.errors.any? %>
+        <h2><%= pluralize(kitten.errors.count, "error") %> prohibited you from completing the form.</h2>
+        <ul>
+        <% kitten.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+        </ul>
+    <% end %>
+
+
+    <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div>
+
+    <div>
+        <%= f.label :age %>
+        <%= f.number_field :age %>
+    </div>
+
+    <div>
+        <%= f.label :softness %>
+        <%= f.text_field :softness %>
+    </div>
+
+    <div>
+        <%= f.label :cuteness %>
+        <%= f.text_field :cuteness %>
+    </div>
+    
+    <div>
+        <%= f.submit %>
+    </div>
+<% end %>

@@ -1,0 +1,16 @@
+<% if flash[:success] %>
+  <%= flash[:success] %>
+<% end %>
+
+<ul>
+    <li><%= @kitten.name %></li>
+    <li><%= @kitten.age %></li>
+    <li><%= @kitten.softness %></li>
+    <li><%= @kitten.cuteness %></li>
+</ul>
+
+<div>
+    <%= link_to 'Update Kitten', edit_kitten_path(@kitten) %>
+    <%= link_to 'Back', kittens_path %>
+    <%= button_to 'Delete Kitten', kitten_path(@kitten), method: :delete, data: { confirm: "Are you sure? "}  %>
+</div>

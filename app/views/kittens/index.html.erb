@@ -1,0 +1,15 @@
+<h1>All ze Kittens</h1>
+
+<% if @kittens.empty? %>
+    <p>Sorry, we have no kittens at the moment.</p> 
+    <%= link_to "Create new kitten", new_kitten_path %>
+<% else %>
+    <% @kittens.each do |kitten| %>
+        <div class = box>
+            <strong><%= link_to kitten.name, kitten_path(kitten)%></strong><br />
+            <p></p>
+            <%= link_to "Create new kitten", new_kitten_path %>
+        </div>
+    <% end %>
+<% end %>
+    
